@@ -18,4 +18,8 @@ class Blog < ApplicationRecord
   def owned_by?(target_user)
     user == target_user
   end
+
+  def not_authorized?(target_user)
+    secret && !owned_by?(target_user)
+  end
 end
