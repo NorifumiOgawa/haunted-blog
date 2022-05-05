@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module BlogsHelper
-  def format_content(blog)
-    h(blog.content).gsub("\n", '<br>')
+  def escape_tags(content)
+    simple_format(h(content))
   end
 end
