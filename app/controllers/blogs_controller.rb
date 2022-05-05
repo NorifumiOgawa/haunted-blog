@@ -11,7 +11,7 @@ class BlogsController < ApplicationController
   end
 
   def show
-    raise ActiveRecord::RecordNotFound if @blog.not_authorized?(current_user)
+    raise ActiveRecord::RecordNotFound unless @blog.authorized?(current_user)
   end
 
   def new
