@@ -20,6 +20,6 @@ class Blog < ApplicationRecord
   end
 
   def authorized?(target_user)
-    owned_by?(target_user) || (!secret && !owned_by?(target_user))
+    owned_by?(target_user) || !secret
   end
 end
