@@ -2,6 +2,6 @@
 
 module BlogsHelper
   def escape_tags(content)
-    simple_format(h(content), {}, wrapper_tag: 'div')
+    simple_format(h(content))
   end
 end
